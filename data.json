@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Makaan Real Estate",
+        "description": "A feature-rich real estate web app built with modern web technologies, offering dynamic property filtering, responsive layout, and clean design for a seamless user experience.",
+        "url": "https://makaan-real-estate-two.vercel.app/"
+    },
+    {
+        "title": "Quiz App",
+        "description": "A sleek and minimalistic quiz app built with local storage support, enabling offline access and real-time progress tracking.",
+        "url": "https://quiz-app-orcin-rho.vercel.app/"
+    },
+    {
+        "title": "Guess The Number",
+        "description": "A minimal and interactive guess-the-number game that stores your performance locally and offers a smooth user experience.",
+        "url": "https://guess-the-number-game-sage.vercel.app/"
+    },
+    {
+        "title": "CV maker",
+        "description": "A modern CV maker web app with local storage support, enabling users to create, edit, and export professional resumes effortlessly.",
+        "url": "https://cv-maker-two-eta.vercel.app/"
+    }
+]

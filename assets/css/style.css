@@ -139,6 +139,10 @@ nav a:hover {
     margin-bottom: 0.5rem;
 }
 
+.card p {
+    margin: 0 25%;
+}
+
 .carousel-buttons {
     position: absolute;
     top: 50%;
