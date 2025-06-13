@@ -1,3 +1,6 @@
+/* ==================================================
+   Global Styles & Variables
+================================================== */
 :root {
     --primary: #0f172a;
     --accent: #38bdf8;
@@ -9,8 +12,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) #1e293b;
 }
 
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 10px;
+    border: 2px solid #1e293b;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #0ea5e9;
+}
+
+/* ==================================================
+   Base Typography & Layout
+================================================== */
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--primary);
@@ -18,6 +46,9 @@ body {
     line-height: 1.6;
 }
 
+/* ==================================================
+   Header and Navigation
+================================================== */
 header {
     padding: 2rem;
     display: flex;
@@ -27,8 +58,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 999;
-    transition: all 0.3s ease;
     background-color: transparent;
+    transition: all 0.3s ease;
 }
 
 .sticky {
@@ -65,13 +96,16 @@ nav a:hover {
     color: var(--accent);
 }
 
+/* ==================================================
+   Hero Section
+================================================== */
 .hero {
     text-align: center;
     background: linear-gradient(to right, #0f172a, #1e293b);
     position: relative;
 }
 
-.container {
+.container-hero {
     padding: 6rem 2rem 8rem;
 }
 
@@ -86,12 +120,15 @@ nav a:hover {
     color: var(--gray);
 }
 
+/* ==================================================
+   Buttons
+================================================== */
 .btn {
     display: inline-block;
     margin-top: 2rem;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
-    background-color: var(--accent);
+    background: linear-gradient(to right, #38bdf8, #818cf8);
     color: #000;
     font-weight: 600;
     text-decoration: none;
@@ -99,13 +136,23 @@ nav a:hover {
 }
 
 .btn:hover {
-    background-color: #0ea5e9;
+    background: linear-gradient(to right, #0ea5e9, #6366f1);
+}
+
+/* ==================================================
+   General Sections
+================================================== */
+.container {
+    padding: 4rem 2rem;
 }
 
 .section {
     padding: 4rem 2rem;
 }
 
+/* ==================================================
+   Carousel
+================================================== */
 .carousel-wrapper {
     position: relative;
     max-width: 100%;
@@ -126,8 +173,7 @@ nav a:hover {
 }
 
 .card {
-    flex: 0 0 100%;
-    max-width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     background-color: #1e293b;
     border-radius: 12px;
     padding: 2rem;
@@ -162,7 +208,7 @@ nav a:hover {
 }
 
 .carousel-buttons button {
-    background: var(--accent);
+    background: linear-gradient(to right, #38bdf8, #818cf8);
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -173,30 +219,231 @@ nav a:hover {
 }
 
 .carousel-buttons button:hover {
-    background: #0ea5e9;
+    background: linear-gradient(to right, #0ea5e9, #6366f1);
 }
 
-form {
-    max-width: 500px;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+/* ==================================================
+   Contact and Comment Section
+================================================== */
+.contact-section {
+    background-color: #0f172a;
 }
 
-input,
-textarea {
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.contact-form,
+.comment-box {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2,
+.comment-box h2 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.comment-box input,
+.contact-form textarea,
+.comment-box textarea {
+    width: 100%;
     padding: 0.8rem;
-    border-radius: 6px;
+    border-radius: 8px;
     border: none;
+    background: #334155;
+    color: var(--light);
+    margin-bottom: 1rem;
     font-size: 1rem;
+    outline: none;
 }
 
-textarea {
-    resize: vertical;
+.contact-form textarea,
+.comment-box textarea {
+    resize: none;
     min-height: 100px;
 }
 
+.contact-btn,
+.comment-btn {
+    width: 100%;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    color: #000;
+    font-weight: 600;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover,
+.comment-btn:hover {
+    background: linear-gradient(to right, #0ea5e9, #6366f1);
+}
+
+.comment-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.comment {
+    background-color: #1e293b;
+    padding: 1rem;
+    border-radius: 12px;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.avatar-wrap i {
+    font-size: 40px;
+    color: #38bdf8;
+    background-color: #334155;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.comment-info {
+    flex-grow: 1;
+    margin-left: 0.75rem;
+}
+
+.comment-info strong {
+    font-size: 1rem;
+    color: var(--light);
+}
+
+.comment-info .username {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 2px;
+}
+
+.comment-time {
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+
+.comment-body {
+    margin-left: 3rem;
+    font-size: 1rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* ==================================================
+   About & Skills Section
+================================================== */
+.about-skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.about-info,
+.skills-info {
+    flex: 1 1 48%;
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+}
+
+.section-title {
+    color: var(--accent);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--light);
+}
+
+.about-list li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.about-list strong {
+    color: var(--accent);
+    margin-right: 1rem;
+    min-width: 130px;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill {
+    width: 100%;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.skill-bar {
+    background: #334155;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    width: 0;
+    border-radius: 10px;
+    transition: width 1s ease-out;
+}
+
+/* ==================================================
+   Footer
+================================================== */
 footer {
     text-align: center;
     padding: 2rem;
@@ -204,7 +451,9 @@ footer {
     color: var(--gray);
 }
 
-/* Media Queries */
+/* ==================================================
+   Responsive (Media Queries)
+================================================== */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.2rem;
@@ -224,5 +473,10 @@ footer {
 
     form {
         padding: 0 1rem;
+    }
+
+    .about-info,
+    .skills-info {
+        flex: 1 1 100%;
     }
 }

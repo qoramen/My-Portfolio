@@ -1,0 +1,27 @@
+[
+    {
+      "name": "HTML",
+      "level": 85
+    },
+    {
+      "name": "CSS / SCSS",
+      "level": 75
+    },
+    {
+      "name": "Bootstrap",
+      "level": 80
+    },
+    {
+      "name": "JavaScript",
+      "level": 75
+    },
+    {
+      "name": "TypeScript",
+      "level":65
+    },
+    {
+      "name": "React",
+      "level": 0
+    }
+  ]
+  
